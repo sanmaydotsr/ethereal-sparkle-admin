@@ -4,17 +4,19 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Sparkles, ArrowLeft, Shield } from "lucide-react";
 import { useAuth } from "@/hooks/useAuth";
 
 const Admin = () => {
   const [formData, setFormData] = useState({
     email: '',
-    password: ''
+    password: '',
+    fullName: ''
   });
   
   const navigate = useNavigate();
-  const { user, loading, signIn } = useAuth();
+  const { user, loading, signIn, signUp } = useAuth();
 
   useEffect(() => {
     // Redirect authenticated users to main page
@@ -23,12 +25,17 @@ const Admin = () => {
     }
   }, [user, navigate]);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent, isSignUp: boolean) => {
     e.preventDefault();
-    const result = await signIn(formData.email, formData.password);
+    
+    let result;
+    if (isSignUp) {
+      result = await signUp(formData.email, formData.password, formData.fullName);
+    } else {
+      result = await signIn(formData.email, formData.password);
+    }
     
     if (!result.error) {
-      // Additional admin verification could be added here
       navigate('/');
     }
   };
@@ -64,58 +71,127 @@ const Admin = () => {
           </p>
         </div>
 
-        {/* Admin Login Form */}
+        {/* Admin Auth Form */}
         <Card className="border-border/50 card-shadow">
           <CardHeader className="text-center pb-4">
             <CardTitle className="font-serif text-lg sm:text-xl">Administrator Access</CardTitle>
             <CardDescription className="text-xs sm:text-sm">
-              Enter your admin credentials to manage products, orders, and content
+              Sign in to existing admin account or create the admin account with: admin@ethela.in
             </CardDescription>
           </CardHeader>
           
           <CardContent>
-            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
-              <div className="space-y-2">
-                <Label htmlFor="admin-email" className="text-sm font-medium">Admin Email</Label>
-                <Input
-                  id="admin-email"
-                  type="email"
-                  placeholder="admin@ethela.in"
-                  value={formData.email}
-                  onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
-                  className="text-sm sm:text-base py-2 sm:py-3"
-                  required
-                />
-              </div>
+            <Tabs defaultValue="signin" className="w-full">
+              <TabsList className="grid w-full grid-cols-2">
+                <TabsTrigger value="signin" className="text-xs sm:text-sm">Sign In</TabsTrigger>
+                <TabsTrigger value="signup" className="text-xs sm:text-sm">Create Admin</TabsTrigger>
+              </TabsList>
               
-              <div className="space-y-2">
-                <Label htmlFor="admin-password" className="text-sm font-medium">Password</Label>
-                <Input
-                  id="admin-password"
-                  type="password"
-                  placeholder="Enter your secure password"
-                  value={formData.password}
-                  onChange={(e) => setFormData(prev => ({ ...prev, password: e.target.value }))}
-                  className="text-sm sm:text-base py-2 sm:py-3"
-                  required
-                />
-              </div>
+              <TabsContent value="signin" className="mt-4">
+                <form onSubmit={(e) => handleSubmit(e, false)} className="space-y-4 sm:space-y-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="signin-email" className="text-sm font-medium">Admin Email</Label>
+                    <Input
+                      id="signin-email"
+                      type="email"
+                      placeholder="admin@ethela.in"
+                      value={formData.email}
+                      onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+                      className="text-sm sm:text-base py-2 sm:py-3"
+                      required
+                    />
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <Label htmlFor="signin-password" className="text-sm font-medium">Password</Label>
+                    <Input
+                      id="signin-password"
+                      type="password"
+                      placeholder="Enter your secure password"
+                      value={formData.password}
+                      onChange={(e) => setFormData(prev => ({ ...prev, password: e.target.value }))}
+                      className="text-sm sm:text-base py-2 sm:py-3"
+                      required
+                    />
+                  </div>
+                  
+                  <Button 
+                    type="submit" 
+                    className="w-full luxury-gradient text-white hover:scale-105 transition-luxury text-sm sm:text-base py-2 sm:py-3 mt-6"
+                    disabled={loading}
+                  >
+                    {loading ? 'Signing In...' : 'Access Admin Portal'}
+                  </Button>
+                </form>
+              </TabsContent>
               
-              <Button 
-                type="submit" 
-                className="w-full luxury-gradient text-white hover:scale-105 transition-luxury text-sm sm:text-base py-2 sm:py-3 mt-6"
-                disabled={loading}
-              >
-                {loading ? 'Signing In...' : 'Access Admin Portal'}
-              </Button>
-            </form>
+              <TabsContent value="signup" className="mt-4">
+                <div className="mb-4 p-3 bg-primary-gold/10 rounded-lg">
+                  <p className="text-sm text-primary-gold font-medium">
+                    ⚠️ Use these exact credentials to create the admin account:
+                  </p>
+                  <p className="text-xs mt-1">Email: admin@ethela.in</p>
+                  <p className="text-xs">Password: SecureAdmin123!</p>
+                </div>
+                
+                <form onSubmit={(e) => handleSubmit(e, true)} className="space-y-4 sm:space-y-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="signup-name" className="text-sm font-medium">Full Name</Label>
+                    <Input
+                      id="signup-name"
+                      type="text"
+                      placeholder="Admin Name"
+                      value={formData.fullName}
+                      onChange={(e) => setFormData(prev => ({ ...prev, fullName: e.target.value }))}
+                      className="text-sm sm:text-base py-2 sm:py-3"
+                      required
+                    />
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <Label htmlFor="signup-email" className="text-sm font-medium">Admin Email</Label>
+                    <Input
+                      id="signup-email"
+                      type="email"
+                      placeholder="admin@ethela.in"
+                      value={formData.email}
+                      onChange={(e) => setFormData(prev => ({ ...prev, email: e.target.value }))}
+                      className="text-sm sm:text-base py-2 sm:py-3"
+                      required
+                    />
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <Label htmlFor="signup-password" className="text-sm font-medium">Password</Label>
+                    <Input
+                      id="signup-password"
+                      type="password"
+                      placeholder="SecureAdmin123!"
+                      value={formData.password}
+                      onChange={(e) => setFormData(prev => ({ ...prev, password: e.target.value }))}
+                      className="text-sm sm:text-base py-2 sm:py-3"
+                      required
+                      minLength={6}
+                    />
+                  </div>
+                  
+                  <Button 
+                    type="submit" 
+                    className="w-full luxury-gradient text-white hover:scale-105 transition-luxury text-sm sm:text-base py-2 sm:py-3 mt-6"
+                    disabled={loading}
+                  >
+                    {loading ? 'Creating Admin Account...' : 'Create Admin Account'}
+                  </Button>
+                </form>
+              </TabsContent>
+            </Tabs>
           </CardContent>
         </Card>
         
         <div className="mt-6 text-center">
           <p className="text-xs sm:text-sm text-muted-foreground px-4">
-            This is a secure admin area. Only authorized personnel can access 
-            the management dashboard and inventory system.
+            First time? Use the "Create Admin" tab with the exact credentials shown above.
+            This is a secure admin area for authorized personnel only.
           </p>
         </div>
       </div>
