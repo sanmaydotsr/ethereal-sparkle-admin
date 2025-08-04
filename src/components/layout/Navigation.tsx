@@ -22,10 +22,10 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
-            <a href="#collections" className="text-sm xl:text-base text-foreground hover:text-primary-gold transition-colors">Collections</a>
-            <a href="#about" className="text-sm xl:text-base text-foreground hover:text-primary-gold transition-colors">About</a>
-            <a href="#sustainability" className="text-sm xl:text-base text-foreground hover:text-primary-gold transition-colors">Sustainability</a>
-            <a href="#contact" className="text-sm xl:text-base text-foreground hover:text-primary-gold transition-colors">Contact</a>
+            <a href="/collections" className="text-sm xl:text-base text-foreground hover:text-primary-gold transition-colors">Collections</a>
+            <a href="/about" className="text-sm xl:text-base text-foreground hover:text-primary-gold transition-colors">About</a>
+            <a href="/sustainability" className="text-sm xl:text-base text-foreground hover:text-primary-gold transition-colors">Sustainability</a>
+            <a href="/contact" className="text-sm xl:text-base text-foreground hover:text-primary-gold transition-colors">Contact</a>
           </div>
 
           {/* Desktop Actions */}
@@ -72,10 +72,10 @@ const Navigation = () => {
         {isMenuOpen && (
           <div className="sm:hidden border-t border-border bg-background/98 backdrop-blur-sm">
             <div className="py-3 space-y-1">
-              <a href="#collections" className="block px-4 py-3 text-sm text-foreground hover:text-primary-gold hover:bg-muted/50 transition-colors rounded-md mx-2" onClick={() => setIsMenuOpen(false)}>Collections</a>
-              <a href="#about" className="block px-4 py-3 text-sm text-foreground hover:text-primary-gold hover:bg-muted/50 transition-colors rounded-md mx-2" onClick={() => setIsMenuOpen(false)}>About</a>
-              <a href="#sustainability" className="block px-4 py-3 text-sm text-foreground hover:text-primary-gold hover:bg-muted/50 transition-colors rounded-md mx-2" onClick={() => setIsMenuOpen(false)}>Sustainability</a>
-              <a href="#contact" className="block px-4 py-3 text-sm text-foreground hover:text-primary-gold hover:bg-muted/50 transition-colors rounded-md mx-2" onClick={() => setIsMenuOpen(false)}>Contact</a>
+              <a href="/collections" className="block px-4 py-3 text-sm text-foreground hover:text-primary-gold hover:bg-muted/50 transition-colors rounded-md mx-2" onClick={() => setIsMenuOpen(false)}>Collections</a>
+              <a href="/about" className="block px-4 py-3 text-sm text-foreground hover:text-primary-gold hover:bg-muted/50 transition-colors rounded-md mx-2" onClick={() => setIsMenuOpen(false)}>About</a>
+              <a href="/sustainability" className="block px-4 py-3 text-sm text-foreground hover:text-primary-gold hover:bg-muted/50 transition-colors rounded-md mx-2" onClick={() => setIsMenuOpen(false)}>Sustainability</a>
+              <a href="/contact" className="block px-4 py-3 text-sm text-foreground hover:text-primary-gold hover:bg-muted/50 transition-colors rounded-md mx-2" onClick={() => setIsMenuOpen(false)}>Contact</a>
               
               <div className="px-2 py-2 border-t border-border mt-2">
                 <Button 

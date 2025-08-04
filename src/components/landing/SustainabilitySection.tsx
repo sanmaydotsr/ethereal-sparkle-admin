@@ -74,15 +74,15 @@ const SustainabilitySection = () => {
             <div className="absolute inset-0 luxury-gradient rounded-2xl transform rotate-3 opacity-20"></div>
             <div className="relative rounded-2xl overflow-hidden card-shadow">
               <img
-                src="https://images.unsplash.com/photo-1544376664-80b17f09d399?auto=format&fit=crop&w=800&q=80"
-                alt="Sustainable diamond creation process"
+                src="/lovable-uploads/7f99e987-6a55-4f16-a382-bc2de3cf00cf.png"
+                alt="Advanced lab technology creating sustainable diamonds"
                 className="w-full h-96 object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent"></div>
               <div className="absolute bottom-6 left-6 right-6">
                 <div className="bg-white/95 backdrop-blur-sm rounded-lg p-4">
                   <div className="flex items-center gap-3">
-                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                    <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
                     <span className="font-medium text-sm">
                       Creating sustainable diamonds with advanced technology
                     </span>
