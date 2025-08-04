@@ -8,8 +8,8 @@ const HeroSection = () => {
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/40 to-background/60 z-10" />
         <img
-          src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=2000&q=80"
-          alt="Elegant diamond jewelry"
+          src="/lovable-uploads/0e6afde7-4222-42df-8de6-490b1df4794d.png"
+          alt="Happy customers exploring beautiful jewelry collections"
           className="w-full h-full object-cover"
         />
       </div>
