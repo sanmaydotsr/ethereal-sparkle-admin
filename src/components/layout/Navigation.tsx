@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Sparkles, ShoppingCart, Shield, Menu, X } from "lucide-react";
+import { Sparkles, ShoppingCart, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import UserAuthModal from "@/components/auth/UserAuthModal";
@@ -36,16 +36,6 @@ const Navigation = () => {
             </Button>
             
             <UserAuthModal />
-            
-            <Button 
-              variant="outline" 
-              size="sm"
-              onClick={() => navigate('/admin')}
-              className="border-primary-gold text-primary-gold hover:bg-primary-gold hover:text-white text-xs lg:text-sm px-2 lg:px-3"
-            >
-              <Shield className="mr-1 lg:mr-2 h-3 w-3 lg:h-4 lg:w-4" />
-              <span className="hidden lg:inline">Admin</span>
-            </Button>
           </div>
 
           {/* Mobile Actions */}
@@ -77,20 +67,7 @@ const Navigation = () => {
               <a href="/sustainability" className="block px-4 py-3 text-sm text-foreground hover:text-primary-gold hover:bg-muted/50 transition-colors rounded-md mx-2" onClick={() => setIsMenuOpen(false)}>Sustainability</a>
               <a href="/contact" className="block px-4 py-3 text-sm text-foreground hover:text-primary-gold hover:bg-muted/50 transition-colors rounded-md mx-2" onClick={() => setIsMenuOpen(false)}>Contact</a>
               
-              <div className="px-2 py-2 border-t border-border mt-2">
-                <Button 
-                  variant="outline" 
-                  size="sm"
-                  onClick={() => {
-                    navigate('/admin');
-                    setIsMenuOpen(false);
-                  }}
-                  className="w-full border-primary-gold text-primary-gold hover:bg-primary-gold hover:text-white text-sm"
-                >
-                  <Shield className="mr-2 h-4 w-4" />
-                  Admin Portal
-                </Button>
-              </div>
+              {/* No admin button in mobile menu anymore */}
             </div>
           </div>
         )}
