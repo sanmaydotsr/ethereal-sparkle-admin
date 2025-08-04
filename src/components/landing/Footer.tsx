@@ -69,8 +69,8 @@ const Footer = () => {
             <h4 className="font-serif font-semibold mb-4">Collections</h4>
             <ul className="space-y-3 text-muted-foreground">
               <li><a href="#" className="hover:text-primary-gold transition-colors">Engagement Rings</a></li>
-              <li><a href="#" className="hover:text-primary-gold transition-colors">Wedding Bands</a></li>
-              <li><a href="#" className="hover:text-primary-gold transition-colors">Necklaces</a></li>
+              <li><a href="#" className="hover:text-primary-gold transition-colors">Wedding Collections</a></li>
+              <li><a href="#" className="hover:text-primary-gold transition-colors">Festival Jewelry</a></li>
               <li><a href="#" className="hover:text-primary-gold transition-colors">Earrings</a></li>
               <li><a href="#" className="hover:text-primary-gold transition-colors">Bracelets</a></li>
             </ul>
@@ -94,15 +94,15 @@ const Footer = () => {
             <div className="space-y-3 text-muted-foreground">
               <div className="flex items-center gap-3">
                 <Mail className="h-4 w-4 text-primary-gold flex-shrink-0" />
-                <span>hello@ethela.com</span>
+                <span>contact@ethela.in</span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="h-4 w-4 text-primary-gold flex-shrink-0" />
-                <span>+1 (555) 123-4567</span>
+                <span>+91 98765 43210</span>
               </div>
               <div className="flex items-start gap-3">
                 <MapPin className="h-4 w-4 text-primary-gold flex-shrink-0 mt-0.5" />
-                <span>123 Luxury Lane<br />New York, NY 10001</span>
+                <span>123 Jewelry Street, Karol Bagh<br />New Delhi, Delhi 110005</span>
               </div>
             </div>
           </div>
@@ -113,12 +113,13 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="py-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
           <div>
-            © 2024 Ethéla. All rights reserved.
+            © 2024 Ethéla. All rights reserved. | Made in India
           </div>
-          <div className="flex gap-6">
+          <div className="flex flex-wrap gap-6 text-center">
             <a href="#" className="hover:text-primary-gold transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-primary-gold transition-colors">Terms of Service</a>
             <a href="#" className="hover:text-primary-gold transition-colors">Shipping & Returns</a>
+            <a href="#" className="hover:text-primary-gold transition-colors">GST Info</a>
           </div>
         </div>
       </div>

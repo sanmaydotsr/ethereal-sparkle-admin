@@ -1,3 +1,4 @@
+import Navigation from "@/components/layout/Navigation";
 import HeroSection from "@/components/landing/HeroSection";
 import FeaturedProducts from "@/components/landing/FeaturedProducts";
 import BlockchainSection from "@/components/landing/BlockchainSection";
@@ -7,6 +8,7 @@ import Footer from "@/components/landing/Footer";
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <Navigation />
       <HeroSection />
       <FeaturedProducts />
       <BlockchainSection />

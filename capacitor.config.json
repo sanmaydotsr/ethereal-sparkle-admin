@@ -1,0 +1,14 @@
+{
+  "appId": "app.lovable.9713026a8dc0499382962213097cddc0",
+  "appName": "ethereal-sparkle-admin",
+  "webDir": "dist",
+  "server": {
+    "url": "https://9713026a-8dc0-4993-8296-2213097cddc0.lovableproject.com?forceHideBadge=true",
+    "cleartext": true
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchAutoHide": false
+    }
+  }
+}

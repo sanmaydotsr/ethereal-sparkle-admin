@@ -88,15 +88,15 @@ const FeaturedProducts = () => {
     <section className="py-20 px-4 bg-muted/20">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-serif font-bold mb-4">Featured Collection</h2>
+          <h2 className="text-3xl sm:text-4xl font-serif font-bold mb-4">Featured Collection</h2>
           <div className="w-24 h-1 bg-primary-gold mx-auto mb-6"></div>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
             Handpicked pieces that showcase the perfect harmony of innovation and elegance. 
             Each diamond is certified and traceable through blockchain technology.
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {products.map((product) => (
             <Card key={product.id} className="group hover:scale-105 transition-luxury card-shadow border-0">
               <CardHeader className="p-0">
@@ -118,7 +118,7 @@ const FeaturedProducts = () => {
                   {product.description}
                 </p>
                 <div className="text-2xl font-bold text-primary-gold">
-                  ${product.price.toLocaleString()}
+                  ₹{product.price.toLocaleString('en-IN')}
                 </div>
               </CardContent>
               
