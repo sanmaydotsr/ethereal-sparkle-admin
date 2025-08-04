@@ -96,53 +96,54 @@ const FeaturedProducts = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
           {products.map((product) => (
-            <Card key={product.id} className="group hover:scale-105 transition-luxury card-shadow border-0">
-              <CardHeader className="p-0">
+            <Card key={product.id} className="group hover:scale-105 transition-luxury card-shadow border-0 flex flex-col h-full">
+              <CardHeader className="p-0 flex-shrink-0">
                 <div className="relative overflow-hidden rounded-t-lg">
                   <img
                     src={product.image_url || "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=400&q=80"}
                     alt={product.name}
-                    className="w-full h-64 object-cover group-hover:scale-110 transition-luxury"
+                    className="w-full h-48 sm:h-56 lg:h-64 object-cover group-hover:scale-110 transition-luxury"
                   />
-                  <Badge className="absolute top-4 left-4 luxury-gradient text-white">
+                  <Badge className="absolute top-3 left-3 luxury-gradient text-white text-xs">
                     Featured
                   </Badge>
                 </div>
               </CardHeader>
               
-              <CardContent className="p-6">
-                <CardTitle className="font-serif text-xl mb-2">{product.name}</CardTitle>
-                <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
+              <CardContent className="p-4 sm:p-6 flex-grow flex flex-col">
+                <CardTitle className="font-serif text-lg sm:text-xl mb-2 line-clamp-2">{product.name}</CardTitle>
+                <p className="text-muted-foreground text-sm mb-3 sm:mb-4 line-clamp-3 flex-grow">
                   {product.description}
                 </p>
-                <div className="text-2xl font-bold text-primary-gold">
+                <div className="text-xl sm:text-2xl font-bold text-primary-gold mt-auto">
                   ₹{product.price.toLocaleString('en-IN')}
                 </div>
               </CardContent>
               
-              <CardFooter className="p-6 pt-0 space-y-3">
+              <CardFooter className="p-4 sm:p-6 pt-0 space-y-3 flex-shrink-0">
                 <Button 
-                  className="w-full luxury-gradient text-white hover:scale-105 transition-luxury"
+                  className="w-full luxury-gradient text-white hover:scale-105 transition-luxury text-sm sm:text-base"
                   onClick={() => addToCart(product)}
+                  size="sm"
                 >
                   <ShoppingCart className="mr-2 h-4 w-4" />
                   Add to Cart
                 </Button>
                 
-                <div className="flex gap-2">
-                  <Button variant="outline" size="sm" className="flex-1">
-                    <Eye className="mr-2 h-4 w-4" />
-                    View Details
+                <div className="grid grid-cols-2 gap-2">
+                  <Button variant="outline" size="sm" className="text-xs sm:text-sm">
+                    <Eye className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />
+                    <span className="hidden sm:inline">View </span>Details
                   </Button>
                   <Button 
                     variant="outline" 
                     size="sm" 
-                    className="flex-1"
+                    className="text-xs sm:text-sm"
                     onClick={() => window.open(product.blockchain_url, '_blank')}
                   >
-                    Verify Authenticity
+                    <span className="hidden sm:inline">Verify </span>Auth
                   </Button>
                 </div>
               </CardFooter>
@@ -151,8 +152,8 @@ const FeaturedProducts = () => {
         </div>
         
         {products.length === 0 && (
-          <div className="text-center py-12">
-            <p className="text-muted-foreground">No featured products available at the moment.</p>
+          <div className="text-center py-8 sm:py-12 col-span-full">
+            <p className="text-muted-foreground text-sm sm:text-base">No featured products available at the moment.</p>
           </div>
         )}
       </div>
