@@ -85,7 +85,7 @@ const FeaturedProducts = () => {
   }
 
   return (
-    <section className="py-20 px-4 bg-muted/20">
+    <section className="py-12 sm:py-16 lg:py-20 px-3 sm:px-4 bg-muted/20">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-serif font-bold mb-4">Featured Collection</h2>

@@ -3,21 +3,21 @@ import { Leaf, Heart, Users, ArrowRight } from "lucide-react";
 
 const SustainabilitySection = () => {
   return (
-    <section className="py-20 px-4">
+    <section className="py-12 sm:py-16 lg:py-20 px-3 sm:px-4">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Content */}
-          <div>
-            <div className="inline-flex items-center gap-2 bg-primary-gold/10 text-primary-gold px-4 py-2 rounded-full mb-6">
-              <Leaf className="h-4 w-4" />
-              <span className="font-medium">Sustainable Luxury</span>
+          <div className="order-2 lg:order-1">
+            <div className="inline-flex items-center gap-2 bg-primary-gold/10 text-primary-gold px-3 sm:px-4 py-2 rounded-full mb-4 sm:mb-6">
+              <Leaf className="h-3 w-3 sm:h-4 sm:w-4" />
+              <span className="font-medium text-xs sm:text-sm">Sustainable Luxury</span>
             </div>
             
-            <h2 className="text-4xl font-serif font-bold mb-6">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold mb-4 sm:mb-6">
               Beauty That Cares
             </h2>
             
-            <div className="w-24 h-1 bg-primary-gold mb-6"></div>
+            <div className="w-20 sm:w-24 h-1 bg-primary-gold mb-4 sm:mb-6"></div>
             
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
               Our lab-grown diamonds represent more than just beauty—they're a conscious choice 
@@ -70,7 +70,7 @@ const SustainabilitySection = () => {
           </div>
           
           {/* Image */}
-          <div className="relative">
+          <div className="relative order-1 lg:order-2">
             <div className="absolute inset-0 luxury-gradient rounded-2xl transform rotate-3 opacity-20"></div>
             <div className="relative rounded-2xl overflow-hidden card-shadow">
               <img

@@ -3,7 +3,7 @@ import { ShoppingCart, Sparkles } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden hero-gradient">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden hero-gradient pt-14 sm:pt-16 lg:pt-20">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/40 to-background/60 z-10" />

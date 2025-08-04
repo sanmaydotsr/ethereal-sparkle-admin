@@ -15,17 +15,17 @@ import {
 const Footer = () => {
   return (
     <footer className="bg-card border-t">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4">
         {/* Newsletter Section */}
-        <div className="py-12 text-center">
-          <h3 className="text-2xl font-serif font-bold mb-4">
+        <div className="py-8 sm:py-12 text-center">
+          <h3 className="text-xl sm:text-2xl font-serif font-bold mb-3 sm:mb-4">
             Stay Connected with Ethéla
           </h3>
-          <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
+          <p className="text-muted-foreground mb-4 sm:mb-6 max-w-2xl mx-auto text-sm sm:text-base px-4">
             Be the first to discover new collections, exclusive offers, and stories 
             behind our sustainable luxury jewelry.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+          <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto px-4">
             <Input 
               placeholder="Enter your email" 
               className="flex-1"
