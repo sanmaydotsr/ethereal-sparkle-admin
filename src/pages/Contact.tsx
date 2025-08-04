@@ -152,6 +152,34 @@ const Contact = () => {
             })}
           </div>
           
+          {/* WhatsApp Contact Button */}
+          <div className="text-center mb-12">
+            <Card className="border-0 card-shadow max-w-md mx-auto bg-gradient-to-r from-green-50 to-emerald-50">
+              <CardContent className="p-8">
+                <div className="mb-4 flex justify-center">
+                  <div className="p-4 rounded-full bg-green-600 text-white">
+                    <MessageCircle className="h-8 w-8" />
+                  </div>
+                </div>
+                <h3 className="text-xl font-serif font-semibold mb-2">Quick WhatsApp Support</h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Get instant responses to your queries about our lab-grown diamond jewelry
+                </p>
+                <Button 
+                  className="w-full bg-green-600 hover:bg-green-700 text-white font-medium"
+                  onClick={() => {
+                    const message = encodeURIComponent("Hi! I'm interested in learning more about Ethela's lab-grown diamond jewelry. Could you please share more details about your collections and pricing?");
+                    const whatsappUrl = `https://wa.me/918618780343?text=${message}`;
+                    window.open(whatsappUrl, '_blank');
+                  }}
+                >
+                  <MessageCircle className="h-4 w-4 mr-2" />
+                  Chat on WhatsApp
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+          
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Contact Form */}
             <Card className="border-0 card-shadow">

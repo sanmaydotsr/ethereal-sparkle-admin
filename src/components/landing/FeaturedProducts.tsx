@@ -90,7 +90,7 @@ const FeaturedProducts = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-serif font-bold mb-4">Featured Collection</h2>
           <div className="w-24 h-1 bg-primary-gold mx-auto mb-6"></div>
-          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
+          <p className="text-base sm:text-lg text-foreground font-medium max-w-2xl mx-auto px-4">
             Handpicked pieces that showcase the perfect harmony of innovation and elegance. 
             Each diamond is certified and traceable through blockchain technology.
           </p>
@@ -122,7 +122,7 @@ const FeaturedProducts = () => {
                 </div>
               </CardContent>
               
-              <CardFooter className="p-4 sm:p-6 pt-0 space-y-3 flex-shrink-0">
+              <div className="p-4 sm:p-6 pt-0 space-y-3 flex-shrink-0">
                 <Button 
                   className="w-full luxury-gradient text-white hover:scale-105 transition-luxury text-sm sm:text-base"
                   onClick={() => addToCart(product)}
@@ -146,7 +146,7 @@ const FeaturedProducts = () => {
                     <span className="hidden sm:inline">Verify </span>Auth
                   </Button>
                 </div>
-              </CardFooter>
+              </div>
             </Card>
           ))}
         </div>

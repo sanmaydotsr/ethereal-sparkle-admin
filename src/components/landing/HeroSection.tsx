@@ -25,7 +25,7 @@ const HeroSection = () => {
           <span className="block text-primary-gold">Ethical Origins.</span>
         </h1>
         
-        <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed px-4">
+        <p className="text-lg sm:text-xl md:text-2xl text-white font-medium mb-8 max-w-2xl mx-auto leading-relaxed px-4 drop-shadow-lg">
           Discover lab-grown diamonds that capture nature's brilliance while honoring your values. 
           Perfect for Indian traditions and modern sensibilities.
         </p>
@@ -49,7 +49,7 @@ const HeroSection = () => {
         </div>
         
         {/* Trust Indicators */}
-        <div className="mt-12 flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-8 text-sm text-muted-foreground px-4">
+        <div className="mt-12 flex flex-col sm:flex-row flex-wrap justify-center gap-4 sm:gap-8 text-sm text-white font-medium px-4 drop-shadow-md">
           <div className="flex items-center justify-center gap-2">
             <div className="w-2 h-2 bg-primary-gold rounded-full" />
             <span>Certified Authentic</span>

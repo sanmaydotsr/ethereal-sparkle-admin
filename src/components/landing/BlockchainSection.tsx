@@ -35,7 +35,7 @@ const BlockchainSection = () => {
           
           <div className="w-20 sm:w-24 h-1 bg-primary-gold mx-auto mb-4 sm:mb-6"></div>
           
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg text-foreground font-medium max-w-3xl mx-auto leading-relaxed">
             In an age where authenticity matters more than ever, Ethéla leverages cutting-edge blockchain 
             technology to provide complete transparency in diamond certification. Every stone comes with 
             an immutable digital certificate that you can verify instantly.
@@ -56,7 +56,7 @@ const BlockchainSection = () => {
                   
                   <h3 className="text-xl font-serif font-semibold mb-4">{feature.title}</h3>
                   
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-foreground leading-relaxed">
                     {feature.description}
                   </p>
                 </CardContent>
@@ -85,7 +85,7 @@ const BlockchainSection = () => {
                   </div>
                 </div>
                 <h4 className="font-serif font-semibold mb-2">{item.title}</h4>
-                <p className="text-sm text-muted-foreground">{item.desc}</p>
+                <p className="text-sm text-foreground">{item.desc}</p>
               </div>
             ))}
           </div>

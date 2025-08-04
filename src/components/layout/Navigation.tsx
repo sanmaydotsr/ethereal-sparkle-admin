@@ -27,6 +27,7 @@ const Navigation = () => {
             <a href="/about" className="text-sm xl:text-base text-foreground hover:text-primary-gold transition-colors">About</a>
             <a href="/sustainability" className="text-sm xl:text-base text-foreground hover:text-primary-gold transition-colors">Sustainability</a>
             <a href="/blog" className="text-sm xl:text-base text-foreground hover:text-primary-gold transition-colors">Blog</a>
+            <a href="/blockchain-verification" className="text-sm xl:text-base text-foreground hover:text-primary-gold transition-colors">Verify</a>
             <a href="/contact" className="text-sm xl:text-base text-foreground hover:text-primary-gold transition-colors">Contact</a>
           </div>
 
@@ -68,6 +69,7 @@ const Navigation = () => {
               <a href="/about" className="block px-4 py-3 text-sm text-foreground hover:text-primary-gold hover:bg-muted/50 transition-colors rounded-md mx-2" onClick={() => setIsMenuOpen(false)}>About</a>
               <a href="/sustainability" className="block px-4 py-3 text-sm text-foreground hover:text-primary-gold hover:bg-muted/50 transition-colors rounded-md mx-2" onClick={() => setIsMenuOpen(false)}>Sustainability</a>
               <a href="/blog" className="block px-4 py-3 text-sm text-foreground hover:text-primary-gold hover:bg-muted/50 transition-colors rounded-md mx-2" onClick={() => setIsMenuOpen(false)}>Blog</a>
+              <a href="/blockchain-verification" className="block px-4 py-3 text-sm text-foreground hover:text-primary-gold hover:bg-muted/50 transition-colors rounded-md mx-2" onClick={() => setIsMenuOpen(false)}>Verify</a>
               <a href="/contact" className="block px-4 py-3 text-sm text-foreground hover:text-primary-gold hover:bg-muted/50 transition-colors rounded-md mx-2" onClick={() => setIsMenuOpen(false)}>Contact</a>
             </div>
           </div>

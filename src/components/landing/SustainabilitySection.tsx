@@ -19,7 +19,7 @@ const SustainabilitySection = () => {
             
             <div className="w-20 sm:w-24 h-1 bg-primary-gold mb-4 sm:mb-6"></div>
             
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+            <p className="text-lg text-foreground font-medium mb-8 leading-relaxed">
               Our lab-grown diamonds represent more than just beauty—they're a conscious choice 
               for a sustainable future. By replicating nature's process in controlled environments, 
               we create stunning gems while preserving our planet's precious resources.
@@ -32,7 +32,7 @@ const SustainabilitySection = () => {
                 </div>
                 <div>
                   <h3 className="font-serif font-semibold mb-2">Environmental Impact</h3>
-                  <p className="text-muted-foreground">
+                  <p className="text-foreground">
                     Lab-grown diamonds use 85% less energy and virtually no water compared to mined alternatives.
                   </p>
                 </div>
@@ -44,7 +44,7 @@ const SustainabilitySection = () => {
                 </div>
                 <div>
                   <h3 className="font-serif font-semibold mb-2">Ethical Sourcing</h3>
-                  <p className="text-muted-foreground">
+                  <p className="text-foreground">
                     Every diamond is created ethically, ensuring no communities are displaced or exploited.
                   </p>
                 </div>
@@ -56,7 +56,7 @@ const SustainabilitySection = () => {
                 </div>
                 <div>
                   <h3 className="font-serif font-semibold mb-2">Artisan Support</h3>
-                  <p className="text-muted-foreground">
+                  <p className="text-foreground">
                     We partner with skilled craftspeople, ensuring fair wages and celebrating traditional techniques.
                   </p>
                 </div>

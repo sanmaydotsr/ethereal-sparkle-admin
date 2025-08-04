@@ -1,11 +1,12 @@
 
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/landing/Footer";
 import { supabase } from "@/integrations/supabase/client";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, User } from "lucide-react";
+import { Calendar, User, ArrowRight } from "lucide-react";
 
 interface Blog {
   id: string;
@@ -18,6 +19,7 @@ interface Blog {
 }
 
 const Blog = () => {
+  const navigate = useNavigate();
   const [blogs, setBlogs] = useState<Blog[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -97,7 +99,11 @@ const Blog = () => {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {blogs.map((blog) => (
-                <Card key={blog.id} className="overflow-hidden hover:shadow-lg transition-shadow">
+                <Card 
+                  key={blog.id} 
+                  className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer group"
+                  onClick={() => navigate(`/blog/${blog.id}`)}
+                >
                   {blog.cover_image_url && (
                     <div className="aspect-video overflow-hidden">
                       <img 
@@ -114,7 +120,7 @@ const Blog = () => {
                       <Calendar className="h-4 w-4 ml-2" />
                       <span>{formatDate(blog.created_at)}</span>
                     </div>
-                    <CardTitle className="font-serif hover:text-primary-gold transition-colors">
+                    <CardTitle className="font-serif group-hover:text-primary-gold transition-colors">
                       {blog.title}
                     </CardTitle>
                   </CardHeader>
@@ -122,7 +128,10 @@ const Blog = () => {
                     <p className="text-muted-foreground line-clamp-3 mb-4">
                       {blog.content.substring(0, 150)}...
                     </p>
-                    <Badge variant="secondary">Published</Badge>
+                    <div className="flex items-center justify-between">
+                      <Badge variant="secondary">Published</Badge>
+                      <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary-gold transition-colors" />
+                    </div>
                   </CardContent>
                 </Card>
               ))}

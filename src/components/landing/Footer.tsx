@@ -9,7 +9,8 @@ import {
   Phone, 
   MapPin, 
   Sparkles,
-  ArrowRight
+  ArrowRight,
+  MessageCircle
 } from "lucide-react";
 
 const Footer = () => {
@@ -21,7 +22,7 @@ const Footer = () => {
           <h3 className="text-xl sm:text-2xl font-serif font-bold mb-3 sm:mb-4">
             Stay Connected with Ethéla
           </h3>
-          <p className="text-muted-foreground mb-4 sm:mb-6 max-w-2xl mx-auto text-sm sm:text-base px-4">
+          <p className="text-foreground mb-4 sm:mb-6 max-w-2xl mx-auto text-sm sm:text-base px-4">
             Be the first to discover new collections, exclusive offers, and stories 
             behind our sustainable luxury jewelry.
           </p>
@@ -47,7 +48,7 @@ const Footer = () => {
               <Sparkles className="h-8 w-8 text-primary-gold" />
               <span className="text-2xl font-serif font-bold">Ethéla</span>
             </div>
-            <p className="text-muted-foreground mb-6 leading-relaxed">
+            <p className="text-foreground mb-6 leading-relaxed">
               Crafting sustainable luxury through lab-grown diamonds and 
               blockchain transparency. Where innovation meets timeless beauty.
             </p>
@@ -60,6 +61,18 @@ const Footer = () => {
               </Button>
               <Button size="sm" variant="outline" className="hover:bg-primary-gold hover:text-white transition-luxury">
                 <Twitter className="h-4 w-4" />
+              </Button>
+              <Button 
+                size="sm" 
+                variant="outline" 
+                className="hover:bg-green-600 hover:text-white transition-luxury"
+                onClick={() => {
+                  const message = encodeURIComponent("Hi! I'm interested in learning more about Ethela's lab-grown diamond jewelry. Could you please share more details about your collections and pricing?");
+                  const whatsappUrl = `https://wa.me/918618780343?text=${message}`;
+                  window.open(whatsappUrl, '_blank');
+                }}
+              >
+                <MessageCircle className="h-4 w-4" />
               </Button>
             </div>
           </div>

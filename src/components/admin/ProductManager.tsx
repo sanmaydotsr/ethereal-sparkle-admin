@@ -178,7 +178,7 @@ export const ProductManager = () => {
                   />
                 </div>
                 <div>
-                  <Label htmlFor="price">Price ($)</Label>
+                  <Label htmlFor="price">Price (₹)</Label>
                   <Input
                     id="price"
                     type="number"
@@ -262,7 +262,7 @@ export const ProductManager = () => {
                     {product.description}
                   </p>
                   <div className="mt-2 text-sm">
-                    <span className="font-medium">${product.price}</span>
+                    <span className="font-medium">₹{product.price}</span>
                     {product.image_url && (
                       <span className="ml-4 text-muted-foreground">Has Image</span>
                     )}
