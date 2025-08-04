@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Sparkles, ShoppingCart, Menu, X } from "lucide-react";
 import { useState } from "react";
@@ -25,6 +26,7 @@ const Navigation = () => {
             <a href="/collections" className="text-sm xl:text-base text-foreground hover:text-primary-gold transition-colors">Collections</a>
             <a href="/about" className="text-sm xl:text-base text-foreground hover:text-primary-gold transition-colors">About</a>
             <a href="/sustainability" className="text-sm xl:text-base text-foreground hover:text-primary-gold transition-colors">Sustainability</a>
+            <a href="/blog" className="text-sm xl:text-base text-foreground hover:text-primary-gold transition-colors">Blog</a>
             <a href="/contact" className="text-sm xl:text-base text-foreground hover:text-primary-gold transition-colors">Contact</a>
           </div>
 
@@ -65,9 +67,8 @@ const Navigation = () => {
               <a href="/collections" className="block px-4 py-3 text-sm text-foreground hover:text-primary-gold hover:bg-muted/50 transition-colors rounded-md mx-2" onClick={() => setIsMenuOpen(false)}>Collections</a>
               <a href="/about" className="block px-4 py-3 text-sm text-foreground hover:text-primary-gold hover:bg-muted/50 transition-colors rounded-md mx-2" onClick={() => setIsMenuOpen(false)}>About</a>
               <a href="/sustainability" className="block px-4 py-3 text-sm text-foreground hover:text-primary-gold hover:bg-muted/50 transition-colors rounded-md mx-2" onClick={() => setIsMenuOpen(false)}>Sustainability</a>
+              <a href="/blog" className="block px-4 py-3 text-sm text-foreground hover:text-primary-gold hover:bg-muted/50 transition-colors rounded-md mx-2" onClick={() => setIsMenuOpen(false)}>Blog</a>
               <a href="/contact" className="block px-4 py-3 text-sm text-foreground hover:text-primary-gold hover:bg-muted/50 transition-colors rounded-md mx-2" onClick={() => setIsMenuOpen(false)}>Contact</a>
-              
-              {/* No admin button in mobile menu anymore */}
             </div>
           </div>
         )}
