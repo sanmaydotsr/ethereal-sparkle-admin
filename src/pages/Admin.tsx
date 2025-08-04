@@ -7,6 +7,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Sparkles, ArrowLeft, Shield } from "lucide-react";
 import { useAuth } from "@/hooks/useAuth";
+import { AdminDashboard } from "@/components/admin/AdminDashboard";
 
 const Admin = () => {
   const [formData, setFormData] = useState({
@@ -16,14 +17,12 @@ const Admin = () => {
   });
   
   const navigate = useNavigate();
-  const { user, loading, signIn, signUp } = useAuth();
+  const { user, loading, signIn, signUp, signOut } = useAuth();
 
-  useEffect(() => {
-    // Redirect authenticated users to main page
-    if (user) {
-      navigate('/');
-    }
-  }, [user, navigate]);
+  // Show admin dashboard if user is authenticated
+  if (user) {
+    return <AdminDashboard user={user} onSignOut={() => signOut()} />;
+  }
 
   const handleSubmit = async (e: React.FormEvent, isSignUp: boolean) => {
     e.preventDefault();
